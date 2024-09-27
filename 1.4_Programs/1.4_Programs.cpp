@@ -3,56 +3,58 @@
 //operator, and the result.For division, if the denominator is zero, output an
 //appropriate message.Limit the supported operations to + -/ *and write an error
 //message if the operator is not one of the supported operations.
+//do this but use a nested if loop
 
-
-using namespace std;
 #include <iostream>
-
+using namespace std;
 
 int main()
 {
+    char repeat;
+    repeat = 'y';
     double num1;
     double num2;
     char operand;
-    char repeat;
-    repeat = 'y';
 
-    
 
     while (repeat == 'y' || repeat == 'Y')
     {
-       cout << "Please enter the first number:" << endl;
-    cin >> num1;
-    cout << "Please choose a operand: + - / * " << endl;  
-    cin >> operand;
-    cout << "Please enter the second number:" << endl;
-    cin >> num2;
+
+
+        cout << "please enter the first number:" << endl;
+        cin >> num1;
+        cout << "choose a operand: + - / *" << endl;
+        cin >> operand;
+        cout << "please enter the second number." << endl;
+        cin >> num2;
+
+        if (operand == '+')
         
-        switch (operand)
-        {
-        case '+':
             cout << "the result of adding " << num1 << " and " << num2 << " is " << num1 + num2 << endl;
-            break;
-        case '-':
+        
+        else if (operand == '-')
+        
             cout << "the result of subtracting " << num2 << " from " << num1 << " is " << num1 - num2 << endl;
-            break;
-        case '/':
+        
+        else if (operand == '/')
+        
             if (num2 == 0)
-            {
-                cout << "you will have to try harder than that dave, I am not going to explode just because you ask me to divide by zero." << endl;
-                break;
-            }
+            
+                cout << "i'm sorry dave, I can't do that.";
+            
             else
-            {
+            
                 cout << "the result of dividing " << num1 << " by " << num2 << " is " << num1 / num2 << endl;
-                break;
-            }
-        case '*':
-            cout << "the result of multiplying " << num1 << " by " << num2 << " is " << num1 * num2 << endl;
-            break;
-        default:
-                cout << "please enter a valid operand." << endl;
-        }
+            
+        
+        else if (operand == '*')
+        
+            cout << " the result of multiplying " << num1 << " by " << num2 << " is " << num1 * num2 << endl;
+        
+        else
+        
+            cout << "please enter a valid operand.";
+        
         cout << "do you want to continue? y/n" << endl;
         cin >> repeat;
     }
