@@ -1,61 +1,32 @@
-// Write a program that mimics a calculator. The program should take as input two
-//integers and the operation to be performed.It should then output the numbers, the
-//operator, and the result.For division, if the denominator is zero, output an
-//appropriate message.Limit the supported operations to + -/ *and write an error
-//message if the operator is not one of the supported operations.
-//do this but use a nested if loop
+//Write a program that reads two input files whose lines are ordered by a key data field.
+// Your program should merge these two files(test files will be supplied), writing an output 
+// file that contains all lines from both files ordered by the same key field.As an example, 
+// if two input files contain student names and grades for a particular class ordered by name(the key field),
+// merge the information as shown in the example.
 
 #include <iostream>
+#include <fstream>
+#include <string>
 using namespace std;
 
 int main()
 {
-    char repeat;
-    repeat = 'y';
-    double num1;
-    double num2;
-    char operand;
+	ifstream inFile1;
+	inFile1.open("file1.txt");
+	string names1;
+	
+	 
+ 
+	ifstream inFile2;
+	inFile2.open("file2.txt");
+	string names2;
+	inFile2 >> names2;
 
+	ofstream outFile;
+	outFile.open("namesFile.txt");
 
-    while (repeat == 'y' || repeat == 'Y')
-    {
-
-
-        cout << "please enter the first number:" << endl;
-        cin >> num1;
-        cout << "choose a operand: + - / *" << endl;
-        cin >> operand;
-        cout << "please enter the second number." << endl;
-        cin >> num2;
-
-        if (operand == '+')
-        
-            cout << "the result of adding " << num1 << " and " << num2 << " is " << num1 + num2 << endl;
-        
-        else if (operand == '-')
-        
-            cout << "the result of subtracting " << num2 << " from " << num1 << " is " << num1 - num2 << endl;
-        
-        else if (operand == '/')
-        
-            if (num2 == 0)
-            
-                cout << "i'm sorry dave, I can't do that.";
-            
-            else
-            
-                cout << "the result of dividing " << num1 << " by " << num2 << " is " << num1 / num2 << endl;
-            
-        
-        else if (operand == '*')
-        
-            cout << " the result of multiplying " << num1 << " by " << num2 << " is " << num1 * num2 << endl;
-        
-        else
-        
-            cout << "please enter a valid operand.";
-        
-        cout << "do you want to continue? y/n" << endl;
-        cin >> repeat;
-    }
+	if (inFile1.eof())
+		cout << "hello" << endl;
+	else
+		cout << "oops" << endl;
 }
